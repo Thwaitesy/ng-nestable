@@ -190,8 +190,12 @@
 					var list = Array.prototype.slice.call(arguments).slice(-1)[0];
 					if(!(list instanceof $)) list = rootList;
 
-					var listItem = $('<li class="dd-item"></li>');
-					var listElement = $('<div ng-nestable-item class="dd-handle"></div>');
+					var listItem = $('<li class="dd-item dd3-item"></li>');
+					var handle = $('<div class="dd-handle dd3-handle">Drag</div>');
+					
+					handle.appendTo(listItem);
+					
+					var listElement = $('<div ng-nestable-item class="dd3-content"></div>');
 					listElement.append(tpl).appendTo(listItem);
 					list.append(listItem);
 					var itemData = $nestable.itemProperty ? item[$nestable.itemProperty] : item;
